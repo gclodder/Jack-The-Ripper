@@ -1,4 +1,4 @@
-JACK THE RIPPER v2.1 – YouTube-playlist omzetten naar MP3 of MP4
+JACK THE RIPPER v2.2 – YouTube-playlist omzetten naar MP3 of MP4
 
 1. Ga naar YouTube
    Maak een playlist met alle liedjes die je wilt gebruiken.
@@ -19,7 +19,7 @@ JACK THE RIPPER v2.1 – YouTube-playlist omzetten naar MP3 of MP4
    Plak de link in het venster en druk op ENTER.
 
 6. Wachten…
-   De muziek wordt automatisch gedownload en omgezet naar MP3 of MP$. 
+   De muziek wordt automatisch gedownload en omgezet naar MP3 of MP4. 
    Wil je tijdens het omzetten annuleren? Druk op Ctrl+C, dan op Y en ENTER
 
 7. Klaar
