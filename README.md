@@ -11,7 +11,7 @@ JACK THE RIPPER v2.2 – YouTube-playlist omzetten naar MP3 of MP4
 
 3. Start het programma
    Dubbelklik op:
-   JACK.bat
+   JACK2.bat
 
 4. Kies 1 voor MP3 omzetten en 2 voor naar MP4 omzetten
 
