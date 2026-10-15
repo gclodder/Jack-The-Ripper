@@ -1,0 +1,11 @@
+# Portable binaries live in release assets, not in Git.
+/tools/*.exe
+/tools/*.zip
+/tools/*.old*
+/dist/
+/artifacts/
+/NA/
+*.bak
+*.before-*
+*.part
+*.ytdl

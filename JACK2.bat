@@ -26,7 +26,7 @@ pause
 
 :START
 cls
-echo  === JACK THE RIPPER v2.2 ==============================================
+echo  === JACK THE RIPPER v2.3 ==============================================
 echo  Kies output, plak playlist URL, en gaan.
 echo  =======================================================================
 echo.
@@ -98,6 +98,20 @@ set "MODE=MP4"
 goto ASK_URL
 
 :ASK_URL
+REM Gebruik uitsluitend de meegeleverde JavaScript-runtime.
+if not exist "%TOOLS%\deno.exe" (
+  echo [FOUT] deno.exe ontbreekt in de tools-map.
+  echo Kopieer de volledige Jack The Ripper-map, inclusief tools.
+  pause
+  goto START
+)
+"%TOOLS%\deno.exe" --version >nul 2>&1
+if errorlevel 1 (
+  echo [FOUT] De meegeleverde deno.exe kan niet starten.
+  echo Deze versie is bedoeld voor 64-bits Windows.
+  pause
+  goto START
+)
 echo.
 set "PL="
 set /p PL="Playlist URL: "
@@ -118,7 +132,7 @@ pause >nul
 goto START
 
 :RUN_MP3
-"%TOOLS%\yt-dlp.exe" --ffmpeg-location "%TOOLS%" ^
+"%TOOLS%\yt-dlp.exe" --no-js-runtimes --js-runtimes "deno:%TOOLS%\deno.exe" --ffmpeg-location "%TOOLS%" ^
   -f "ba/b" ^
   -x --audio-format mp3 --audio-quality 0 ^
   -o "%%(playlist_title)s\%%(playlist_index)02d - %%(title)s.%%(ext)s" ^
@@ -127,7 +141,7 @@ goto START
 goto DONE
 
 :RUN_MP4
-"%TOOLS%\yt-dlp.exe" --ffmpeg-location "%TOOLS%" ^
+"%TOOLS%\yt-dlp.exe" --no-js-runtimes --js-runtimes "deno:%TOOLS%\deno.exe" --ffmpeg-location "%TOOLS%" ^
   -f "bv*+ba/b/18" --merge-output-format mp4 ^
   -o "%%(playlist_title)s\%%(playlist_index)02d - %%(title)s.%%(ext)s" ^
   --ignore-errors --no-abort-on-error --newline ^
@@ -152,7 +166,6 @@ REM ==================================================================
 REM  FUNCTIONS
 REM ==================================================================
 :DO_UPDATE_YTDLP
-setloc:DO_UPDATE_YTDLP
 setlocal
 set "YTDLP=%TOOLS%\yt-dlp.exe"
 set "URL=https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe"

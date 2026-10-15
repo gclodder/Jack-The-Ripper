@@ -1,0 +1,20 @@
+JACK THE RIPPER - CHANGELOG
+
+2.3 - 15-10-2026
+- Portable Deno 2.9.7 voor Windows x64 meegeleverd in het volledige releasepakket.
+- MP3 en MP4 gebruiken expliciet tools\deno.exe; Node.js-installatie is niet nodig.
+- Duidelijke melding wanneer Deno ontbreekt of niet kan starten.
+- Instructies voor uitpakken, delen, losse video's, playlists en updates vernieuwd.
+- Pakketindeling, programmaversies, SHA-256-controles en licentiegegevens toegevoegd.
+
+2.2 - vorige release
+- Standalone yt-dlp-update via het menu.
+
+2.1 - 09-02-2026
+- yt-dlp bijgewerkt naar 2026.02.04.
+
+2.0 - 27-01-2026
+- MP4-optie toegevoegd.
+
+1.0 - 23-12-2025
+- Eerste release.
